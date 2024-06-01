@@ -34,4 +34,4 @@ psql "${TEST_DB_NAME}" \
   --host "${TEST_DB_HOST}" \
   --port "${TEST_DB_PORT}" \
   --username "${TEST_DEFAULT_USER}" \
-  --file scripts/schema.sql
+  --file schema.sql
