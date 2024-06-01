@@ -1,7 +1,7 @@
 import doobie.*
 import doobie.implicits.*
 import cats.effect.implicits.*
-import cats.effect.{IO, Resource}
+import cats.effect.IO
 
 trait DbClient:
   def pureDbLogic(a: Int): IO[Option[Int]]
