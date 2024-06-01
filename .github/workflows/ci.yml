@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  shellcheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Run ShellCheck
+      uses: ludeeus/action-shellcheck@2.0.0
+      with:
+        check_together: yes
+        scandir: "scripts"
+      env:
+        SHELLCHECK_OPTS: --severity style --enable all --exclude SC2312 --shell bash
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+    - uses: actions/checkout@v4
+    - uses: coursier/cache-action@v6
+    - uses: VirtusLab/scala-cli-setup@v1
+    - name: Run unit tests
+      run: scala-cli test Main.scala unit
+
+  integration-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+    - uses: actions/checkout@v4
+    - uses: coursier/cache-action@v6
+    - uses: VirtusLab/scala-cli-setup@v1
+    - name: Run integration tests
+      run: scripts/integration_tests.sh
+
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: coursier/cache-action@v6
+      - uses: VirtusLab/scala-cli-setup@v1
+      - name: Scalafmt check
+        run: |
+          scala-cli fmt --check . || (
+            echo "To format code run"
+            echo "  scala-cli fmt ."
+            exit 1
+          )
