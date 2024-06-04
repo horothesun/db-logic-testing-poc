@@ -1,6 +1,7 @@
 # DB logic testing PoC
 
 [![CI](https://github.com/horothesun/db-logic-testing-poc/actions/workflows/ci.yml/badge.svg)](https://github.com/horothesun/db-logic-testing-poc/actions/workflows/ci.yml)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg?style=flat-square)](https://renovatebot.com)
 [![Scala](https://img.shields.io/badge/Scala-3-%23DC322F?style=flat&labelColor=%23383838&logo=Scala&logoColor=%23DC322F&logoWidth=12&cacheSeconds=3600)](https://www.scala-lang.org/)
 
 Proof of concept on how to test some logic defined in your DB (e.g. `pure_db_logic(a int)`).
