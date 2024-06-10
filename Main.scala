@@ -8,4 +8,4 @@
 //> using test.dep "org.scalameta::munit:1.0.0"
 //> using test.dep "org.typelevel::munit-cats-effect:2.0.0"
 
-@main def main = println("Nothing interesting to see here, check the tests!")
+@main def main(): Unit = println("Nothing interesting to see here, check the tests!")

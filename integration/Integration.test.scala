@@ -1,5 +1,4 @@
 import DbClient.*
-import cats.effect.IO
 import munit.CatsEffectSuite
 
 class IntegrationSuite extends CatsEffectSuite:
