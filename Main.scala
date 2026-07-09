@@ -5,7 +5,7 @@
 //> using dep org.typelevel::doobie-core:1.0.0-RC13
 //> using dep org.typelevel::doobie-postgres:1.0.0-RC13
 
-//> using test.dep org.scalameta::munit:1.3.3
+//> using test.dep org.scalameta::munit:1.3.4
 //> using test.dep org.typelevel::munit-cats-effect:2.2.0
 
 @main def main(): Unit = println("Nothing interesting to see here, check the tests!")
