@@ -1,7 +1,7 @@
 //> using scala 3.8.4
 //> using jvm temurin:21
 
-//> using dep org.typelevel::cats-effect:3.7.0
+//> using dep org.typelevel::cats-effect:3.7.1
 //> using dep org.typelevel::doobie-core:1.0.0-RC13
 //> using dep org.typelevel::doobie-postgres:1.0.0-RC13
 
