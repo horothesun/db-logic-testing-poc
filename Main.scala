@@ -2,8 +2,8 @@
 //> using jvm temurin:21
 
 //> using dep org.typelevel::cats-effect:3.7.1
-//> using dep org.typelevel::doobie-core:1.0.0-RC13
-//> using dep org.typelevel::doobie-postgres:1.0.0-RC13
+//> using dep org.typelevel::doobie-core:1.0.0-RC14
+//> using dep org.typelevel::doobie-postgres:1.0.0-RC14
 
 //> using test.dep org.scalameta::munit:1.3.6
 //> using test.dep org.typelevel::munit-cats-effect:2.2.1
